@@ -636,7 +636,7 @@ footer .social-link-list a {
 }
 
 .input-email-field::placeholder {
-	color: color: rgba(255, 255, 255, 0.6);;
+	color: rgba(255, 255, 255, 0.6);
 }
 
 footer .button {
@@ -788,12 +788,12 @@ footer .button:focus .button-icon {
 .modal-form-icon {
 	position: absolute;
 	top: 50%;
-	left: 16px;
+	left: 0;
 
 	width: 18px;
 	height: 18px;
 
-	transform: translateY(-50%);
+	transform: translate(16px, -50%);
 	transition: fill var(--trans-time-and-bezier);
 }
 
@@ -854,25 +854,8 @@ textarea + .modal-form-label {
 	margin-bottom: 31px;
 }
 
-.accept-terms-checkbox {
-	position: absolute;
-
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	border: 0;
-	padding: 0;
-
-	clip: rect(0 0 0 0);
-	overflow: hidden;
-}
-
-.accept-terms-checkbox:hover + .checkbox-icon,
-.accept-terms-checkbox:focus + .checkbox-icon {
-	border-color: var(--color-for-hovered);
-}
-
-.checkbox-icon {
+.accept-terms::before {
+	content: '';
 	display: inline-block;
 	margin-right: 8px;
 
@@ -885,7 +868,12 @@ textarea + .modal-form-label {
 	transition: var(--trans-time-and-bezier);
 }
 
-.accept-terms-checkbox:checked + .checkbox-icon {
+.accept-terms:hover::before,
+.accept-terms-field:focus-within .accept-terms::before {
+	border-color: var(--color-for-hovered);
+}
+
+.accept-terms-checkbox:checked ~ .accept-terms::before {
 	border-color: transparent;
 	background-color: var(--color-for-hovered);
 	background-image: url('../images/check-icon.svg');

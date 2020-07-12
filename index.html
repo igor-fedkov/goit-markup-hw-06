@@ -425,7 +425,7 @@
 				</ul>
 			</div>
 
-			<form class="email-input" action="">
+			<form class="email-input">
 				<b>Подпишитесь на рассылку</b>
 				<input class="input-email-field" required type="email" name="email" placeholder="E-mail">
 				<button class="button" type="submit">
@@ -456,7 +456,7 @@
 			<button class="btn-close" data-modal-close>&#10006;</button>
 			<h1 class="modal-title">Оставьте свои данные, мы вам перезвоним</h1>
 
-			<form class="modal-form" action="">
+			<form class="modal-form">
 				<label class="modal-form-field">
 					<input class="modal-form-input-area" required type="text" name="name" placeholder=" ">
 					<svg class="modal-form-icon">
@@ -486,14 +486,15 @@
 					<span class="modal-form-label">Комментарий</span>
 				</label>
 				
-				<label class="accept-terms">
-					<input class="accept-terms-checkbox" required type="checkbox" name="accept-terms" value="i-accept-terms">
-					<span class="checkbox-icon"></span>
-					<span class="accept-terms-label">
-						Соглашаюсь с рассылкой и принимаю
-						<a href="" aria-label="Читать условия договора">Условия договора</a>
-					</span>
-				</label>
+				<div class="accept-terms-field">
+					<input class="accept-terms-checkbox no-display" id="id-for-accept-terms-checkbox" required type="checkbox" name="accept-terms" value="i-accept-terms">
+					<label class="accept-terms" for="id-for-accept-terms-checkbox">
+						<span class="accept-terms-label">
+							Соглашаюсь с рассылкой и принимаю
+							<a href="" aria-label="Читать условия договора">Условия договора</a>
+						</span>
+					</label>
+				</div>
 
 				<button class="button" type="submit">Отправить</button>
 			</form>
